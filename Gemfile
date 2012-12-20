@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'twitter_bootstrap_form_for'
 
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 group :assets do
   gem 'sass-rails'

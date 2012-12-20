@@ -4,7 +4,8 @@
       = post.text_field :title, {:required => true}
       .title_error
         | title cannot be blank
-      = post.text_area :message, {:required => true, :class=>"input_message"}
+      .form_message
+        = post.text_area :message, {:required => true, :class=>"input_message"}
       .message_error
         | message cannot be blank
       = post.actions do
