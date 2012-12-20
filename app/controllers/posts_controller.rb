@@ -17,7 +17,11 @@ class PostsController < ApplicationController
   #
   # @api public
   def edit
-    respond_with existing_post
+    if current_user != existing_post.user
+      redirect_to posts_url
+    else
+      respond_with existing_post    
+    end
   end
 
   # Show a post
@@ -40,7 +44,7 @@ class PostsController < ApplicationController
 
   # Create post
   #
-  # @return [undefined]
+  # @return [undefined]mansour bari bakh
   #
   # @api public
   def create
