@@ -1,6 +1,6 @@
 # A simple Forum like MessageBoard #
 
-## Functionalities ## 
+## Functionalities 
   
 1. A user can Sign In using Twitter (used omniauth-twitter).
 2. A user can create a new post.
