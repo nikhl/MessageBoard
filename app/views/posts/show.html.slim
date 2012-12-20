@@ -1,0 +1,11 @@
+.show_title
+  a href=post_path(existing_post)
+    = existing_post.title
+  '
+  ' Posted by 
+  = existing_post.user.name 
+.show_message
+  = existing_post.message
+.show_edit
+  a href=edit_post_path(existing_post)
+    input.btn type="button" value="Edit"

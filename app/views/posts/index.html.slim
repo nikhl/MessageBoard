@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title ViralHeat Message Board
+
+  body
+    - if current_user
+      - posts.each do |post|
+        .post
+        - if post.user == current_user
+          .edit_post
+            a href=edit_post_path(post)
+              input.btn type="button" value="Edit"
+        - if post.user == current_user
+          .title data-title_id=post.id
+            a href=post_path(post)
+              = post.title
+            .message data-message_id=post.id
+              = post.user.name 
+              |  
+              ' wrote
+              = post.message
+        - else
+          .title_without_edit data-title_id=post.id
+            a href=post_path(post)
+              = post.title
+            .message data-message_id=post.id
+              = post.user.name 
+              |  
+              ' wrote
+              = post.message
+          
+        - if post.user == current_user
+          .delete_post
+            = button_to "Delete", post, :method => :delete, :confirm => 'Are you sure?'
+	- else
+	  .welcome_text
+	    | Welcome to ViralHeat MessageBoard, please sign in with Twitter to post messages

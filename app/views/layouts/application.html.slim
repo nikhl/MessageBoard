@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta http-equiv='Content-Type' content='text/html; charset=UTF-8'
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+  .body
+    .header
+      h3 ViralHeat Message Board
+    .container
+      .form_header
+        - if current_user
+          .home_button
+            a href=posts_path 
+              input.btn type="button" value="Home"
+          .post_button
+            a href=new_post_path 
+              input.btn type="button" value="Post"
+          .index
+			h5
+			  ' Welcome
+			  = current_user.name
+			  |  ( 
+			  a href="/signout"
+			    | Sign Out
+			  |  )
+		- else
+		  .index
+		    a href="/auth/twitter"
+			  h5 Sign in with Twitter
+      = yield

@@ -1,0 +1,14 @@
+.post-form
+  = twitter_bootstrap_form_for post do |post|
+    = post.inputs do
+      = post.text_field :title, {:required => true}
+      .title_error
+        | title cannot be blank
+      = post.text_area :message, {:required => true, :class=>"input_message"}
+      .message_error
+        | message cannot be blank
+      = post.actions do
+        = post.submit 'Submit'
+- if from
+  .form_delete
+    = button_to "Delete", post, :method => :delete, :confirm => 'Are you sure?'     
