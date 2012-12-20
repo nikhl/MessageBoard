@@ -6,6 +6,7 @@
   = existing_post.user.name 
 .show_message
   = existing_post.message
-.show_edit
-  a href=edit_post_path(existing_post)
-    input.btn type="button" value="Edit"
+- if current_user == existing_post.user
+  .show_edit
+    a href=edit_post_path(existing_post)
+      input.btn type="button" value="Edit"
