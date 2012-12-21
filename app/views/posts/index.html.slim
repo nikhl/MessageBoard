@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title ViralHeat Message Board
+    title Message Board
 
   body
     - if current_user
@@ -35,4 +35,4 @@ html
             = button_to "Delete", post, :method => :delete, :confirm => 'Are you sure?'
 	- else
 	  .welcome_text
-	    | Welcome to ViralHeat MessageBoard, please sign in with Twitter to post messages
+	    | Welcome to MessageBoard, please sign in with Twitter to post messages
