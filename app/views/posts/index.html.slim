@@ -25,7 +25,7 @@ html
             a href=post_path(post)
               = post.title
             .message data-message_id=post.id
-              = post.user.name 
+              = current_user.name 
               |  
               ' wrote
               = post.message

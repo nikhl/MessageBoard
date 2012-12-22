@@ -25,7 +25,10 @@ html
 			    | Sign Out
 			  |  )
 		- else
-		  .index
+		  .signin_facebook
+		    a href="/auth/facebook"
+			  img src="/images/facebook_image.png"
+		  .signin_twitter
 		    a href="/auth/twitter"
-			  h5 Sign in with Twitter
+			  img src="/images/twitter_image.jpg"
       = yield
