@@ -24,6 +24,10 @@ group :production do
 end
 
 group :development, :test do
-  gem 'rspec'
   gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'jasmine'
 end
