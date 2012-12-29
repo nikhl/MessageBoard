@@ -172,10 +172,14 @@ h5{
 
 .signin_facebook {
   float: left;
-  margin-left: 275px;
+  margin-left: 235px;
 }
 
 .signin_twitter {
+  @include auth-button-style();
+}
+
+.signin_google {
   @include auth-button-style();
 }
 

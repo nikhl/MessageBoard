@@ -9,6 +9,8 @@ development:
   foursquare_secret: 'MEL1CNZKI3RDZQD0XLHLCXUHCA2KRQUIZ1SVJD2QQ3POAEAA'
   linkedin_id: 'o8qpbqzcx1t9'
   linkedin_secret: 'ii3PQ0MfJk5HZFvf'
+  google_id: '505407093047.apps.googleusercontent.com'
+  google_secret: '7Lm6dE5VtLhMLD1p5F3EiFA1'
 
 production:
   twitter_id: 'NBIC9U1Qzmf9WJzxFLPg'
@@ -21,3 +23,5 @@ production:
   foursquare_secret: 'MEL1CNZKI3RDZQD0XLHLCXUHCA2KRQUIZ1SVJD2QQ3POAEAA'
   linkedin_id: 'o8qpbqzcx1t9'
   linkedin_secret: 'ii3PQ0MfJk5HZFvf'
+  google_id: '505407093047.apps.googleusercontent.com'
+  google_secret: '7Lm6dE5VtLhMLD1p5F3EiFA1'

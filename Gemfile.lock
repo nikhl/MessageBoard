@@ -134,6 +134,10 @@ GEM
     omniauth-github (1.0.3)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-google (1.0.2)
+      multi_json
+      omniauth (~> 1.0)
+      omniauth-oauth
     omniauth-identity (1.1.0)
       bcrypt-ruby (~> 3.0)
       omniauth (~> 1.0)
@@ -252,6 +256,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-foursquare
   omniauth-github
+  omniauth-google
   omniauth-identity
   omniauth-linkedin
   omniauth-twitter
