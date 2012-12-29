@@ -13,6 +13,8 @@ gem 'omniauth-identity'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+gem 'omniauth-foursquare'
+gem 'omniauth-linkedin'
 
 group :assets do
   gem 'sass-rails'

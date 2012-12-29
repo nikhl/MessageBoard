@@ -172,7 +172,7 @@ h5{
 
 .signin_facebook {
   float: left;
-  margin-left: 390px;
+  margin-left: 275px;
 }
 
 .signin_twitter {
@@ -180,6 +180,14 @@ h5{
 }
 
 .signin_github {
+  @include auth-button-style();
+}
+
+.signin_foursquare {
+  @include auth-button-style();
+}
+
+.signin_linkedin {
   @include auth-button-style();
 }
 

@@ -128,12 +128,17 @@ GEM
       rack
     omniauth-facebook (1.4.1)
       omniauth-oauth2 (~> 1.1.0)
+    omniauth-foursquare (0.0.8)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
     omniauth-github (1.0.3)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
     omniauth-identity (1.1.0)
       bcrypt-ruby (~> 3.0)
       omniauth (~> 1.0)
+    omniauth-linkedin (0.0.8)
+      omniauth-oauth (~> 1.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -245,8 +250,10 @@ DEPENDENCIES
   launchy
   mysql2
   omniauth-facebook
+  omniauth-foursquare
   omniauth-github
   omniauth-identity
+  omniauth-linkedin
   omniauth-twitter
   pg
   rails (= 3.2.9)
