@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
   # Create post
   #
-  # @return [undefined]mansour bari bakh
+  # @return [undefined]
   #
   # @api public
   def create

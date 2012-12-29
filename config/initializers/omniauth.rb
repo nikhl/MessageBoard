@@ -5,4 +5,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :foursquare, APP_CONFIG['foursquare_id'], APP_CONFIG['foursquare_secret']
   provider :linkedin, APP_CONFIG['linkedin_id'], APP_CONFIG['linkedin_secret']
   provider :google, APP_CONFIG['google_id'], APP_CONFIG['google_secret']
+  provider :tumblr, APP_CONFIG['tumblr_id'], APP_CONFIG['tumblr_secret']
 end

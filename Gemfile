@@ -9,13 +9,13 @@ gem 'mysql2'
 gem 'twitter_bootstrap_form_for'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'omniauth-identity'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
 gem 'omniauth-github'
 gem 'omniauth-foursquare'
 gem 'omniauth-linkedin'
+gem 'omniauth-tumblr'
 
 group :assets do
   gem 'sass-rails'

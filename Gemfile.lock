@@ -138,9 +138,6 @@ GEM
       multi_json
       omniauth (~> 1.0)
       omniauth-oauth
-    omniauth-identity (1.1.0)
-      bcrypt-ruby (~> 3.0)
-      omniauth (~> 1.0)
     omniauth-linkedin (0.0.8)
       omniauth-oauth (~> 1.0)
     omniauth-oauth (1.0.1)
@@ -149,6 +146,8 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    omniauth-tumblr (1.1)
+      omniauth-oauth (~> 1.0)
     omniauth-twitter (0.0.14)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
@@ -257,8 +256,8 @@ DEPENDENCIES
   omniauth-foursquare
   omniauth-github
   omniauth-google
-  omniauth-identity
   omniauth-linkedin
+  omniauth-tumblr
   omniauth-twitter
   pg
   rails (= 3.2.9)

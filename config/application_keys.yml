@@ -11,6 +11,8 @@ development:
   linkedin_secret: 'ii3PQ0MfJk5HZFvf'
   google_id: '505407093047.apps.googleusercontent.com'
   google_secret: '7Lm6dE5VtLhMLD1p5F3EiFA1'
+  tumblr_id: 'fjHkvYgLKCQW2UXgRkKFFPgQW8UsroqhDyNuPVxAFV8Hq26hoM'
+  tumblr_secret: 'Hei0F6iSVas9AENPDMXNtX7diqMZynX8HicHHInlrS13Ha02oB'
 
 production:
   twitter_id: 'NBIC9U1Qzmf9WJzxFLPg'
@@ -25,3 +27,5 @@ production:
   linkedin_secret: 'ii3PQ0MfJk5HZFvf'
   google_id: '505407093047.apps.googleusercontent.com'
   google_secret: '7Lm6dE5VtLhMLD1p5F3EiFA1'
+  tumblr_id: 'fjHkvYgLKCQW2UXgRkKFFPgQW8UsroqhDyNuPVxAFV8Hq26hoM'
+  tumblr_secret: 'Hei0F6iSVas9AENPDMXNtX7diqMZynX8HicHHInlrS13Ha02oB'
