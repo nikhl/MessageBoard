@@ -8,8 +8,11 @@ gem 'mysql2'
 
 gem 'twitter_bootstrap_form_for'
 
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'omniauth-identity'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 group :assets do
   gem 'sass-rails'
@@ -30,4 +33,8 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'jasmine'
+
+  gem 'rb-inotify', '~> 0.8.8'
+  gem 'guard-livereload'
+  
 end

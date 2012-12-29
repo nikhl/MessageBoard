@@ -5,6 +5,10 @@
 @import 'bootstrap';
 @import 'bootstrap/variables';
 
+@mixin auth-button-style() {
+  float: left;
+  margin-left: 20px;
+}
 
 body {
   background-color: #fff;
@@ -145,7 +149,6 @@ h5{
 .welcome_text {
   font-weight: bold;
   text-align: center;
-  margin-top: 10px;
 }
 
 .home_button{
@@ -163,13 +166,22 @@ h5{
   width: 925px;
 }
 
+.signin_external {
+  margin: 9px;
+}
+
 .signin_facebook {
-  float: right;
-  margin: 5px;
-  margin-right: 25px;
+  float: left;
+  margin-left: 390px;
 }
 
 .signin_twitter {
-  float: right;
-  margin: 5px;
+  @include auth-button-style();
+}
+
+.signin_github {
+  @include auth-button-style();
+}
+
+.signin_identity {
 }

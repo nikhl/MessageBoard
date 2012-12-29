@@ -1,0 +1,15 @@
+development:
+  twitter_id: 'NBIC9U1Qzmf9WJzxFLPg'
+  twitter_secret: 'ZHJIEUWOuS8WZ1cClVJtkyZWBS5SF99S1w8mFAR5U'
+  facebook_id: '139575262862250'
+  facebook_secret: '9afa94da4e140a8e2315e6b656176256'
+  github_id: '7c72176dd83eb5114f08'
+  github_secret: '9f492ab9f7635e4bd2ce2c3f173add42fcf446c0'
+
+production:
+  twitter_id: 'NBIC9U1Qzmf9WJzxFLPg'
+  twitter_secret: 'ZHJIEUWOuS8WZ1cClVJtkyZWBS5SF99S1w8mFAR5U'
+  facebook_id: '139575262862250'
+  facebook_secret: '9afa94da4e140a8e2315e6b656176256'
+  github_id: '7c72176dd83eb5114f08'
+  github_secret: '9f492ab9f7635e4bd2ce2c3f173add42fcf446c0'

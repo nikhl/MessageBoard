@@ -11,24 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121222042220) do
+ActiveRecord::Schema.define(:version => 20121229064028) do
 
   create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "message"
-    t.integer  "user_id",          :null => false
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
+    t.string   "title",      :null => false
+    t.string   "message",    :null => false
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
-
   create_table "users", :force => true do |t|
-    t.string   "provider"
-    t.string   "name"
-    t.string   "uid"
+    t.string   "name",             :null => false
+    t.string   "provider",         :null => false
+    t.string   "uid",              :null => false
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "oauth_token"

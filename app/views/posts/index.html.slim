@@ -35,4 +35,22 @@ html
             = button_to "Delete", post, :method => :delete, :confirm => 'Are you sure?'
 	- else
 	  .welcome_text
-	    | Welcome to MessageBoard, please sign in with Twitter or Facebook to post messages
+	    h3 Welcome to MessageBoard
+	    br
+	      h4 Sign in using
+	    .signin_external
+	      .signin_facebook
+		    a href="/auth/facebook"
+		      img.facebook src="/assets/facebook_64.png"
+		    .facebook_label
+		      | Facebook
+		  .signin_twitter
+		    a href="/auth/twitter"
+		      img.twitter src="/assets/twitter_64.png"
+		    .twitter_label
+		      | Twitter
+		  .signin_github
+		    a href="/auth/github"
+		      img.twitter src="/assets/github_64.png"
+		    .github_label
+		      | Github

@@ -3719,3 +3719,1982 @@ Completed 200 OK in 62ms (Views: 55.2ms | ActiveRecord: 1.3ms)
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
   [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:29 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:29 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:29', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:29')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 88ms (ActiveRecord: 6.1ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:29 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (71.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 174ms (Views: 169.6ms | ActiveRecord: 1.2ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:43:29 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:29 -0800
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.slim within layouts/application (9.9ms)
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 14ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (46.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:30', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:30')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.6ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered posts/_form.html.slim (118.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Completed 200 OK in 154ms (Views: 152.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (45.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:30', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:30')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 0.9ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.7ms)
+  [1m[36m (48.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:30', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:30')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:30', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:43:30')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:43:30', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:43:30', 123456)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/posts/1" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+Completed 200 OK in 92ms (Views: 88.7ms | ActiveRecord: 1.1ms)
+  [1m[36m (57.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:30', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:30')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123457 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123457 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123457 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123457 LIMIT 1
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123457 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:30 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (32.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:39', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:39')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 61ms (ActiveRecord: 5.4ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123458 LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123458 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (26.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123458 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123458 LIMIT 1[0m
+Completed 200 OK in 90ms (Views: 82.9ms | ActiveRecord: 3.3ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123458 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.slim within layouts/application (42.2ms)
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (41.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:39', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:39')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123459 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123459 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123459 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123459 LIMIT 1
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123459 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123459 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123459 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123459 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (39.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:39', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:39')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123460 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123460 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123460 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123460 LIMIT 1[0m
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 1.1ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:43:39 -0800
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123460 LIMIT 1
+  Rendered posts/_form.html.slim (50.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123460 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123460 LIMIT 1
+Completed 200 OK in 72ms (Views: 61.1ms | ActiveRecord: 0.7ms)
+  [1m[36m (40.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:40', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:40')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123461 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123461 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123461 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123461 LIMIT 1
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:40', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:43:40')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:43:40', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:43:40', 123456)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/posts/2" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123461 LIMIT 1[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123461 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123461 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123461 LIMIT 1
+Completed 200 OK in 56ms (Views: 52.2ms | ActiveRecord: 1.7ms)
+  [1m[36m (42.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:43:40', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:43:40')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123462 LIMIT 1[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123462 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123462 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123462 LIMIT 1
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 1.0ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123462 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:43:40 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (37.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:35 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:35 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (30.3ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:35', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:35')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 72ms (ActiveRecord: 33.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:35 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123463 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123463 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (25.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123463 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123463 LIMIT 1[0m
+Completed 200 OK in 105ms (Views: 93.0ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:35', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:44:35')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:44:35', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:44:35', 123456)
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/posts/3" for 127.0.0.1 at 2012-12-25 14:44:35 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123463 LIMIT 1
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123463 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  Rendered posts/show.html.slim within layouts/application (47.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123463 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123463 LIMIT 1[0m
+Completed 200 OK in 54ms (Views: 50.2ms | ActiveRecord: 1.8ms)
+  [1m[35m (45.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:36', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:36')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123464 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123464 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123464 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123464 LIMIT 1[0m
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 0.9ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123464 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (43.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:36', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:36')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123465 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123465 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123465 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123465 LIMIT 1
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.7ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123465 LIMIT 1[0m
+  Rendered posts/_form.html.slim (47.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123465 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123465 LIMIT 1[0m
+Completed 200 OK in 99ms (Views: 96.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (44.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:36', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:36')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123466 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123466 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123466 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123466 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.9ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123466 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (42.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:36', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:36')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123467 LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123467 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123467 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123467 LIMIT 1
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.8ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:36 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123467 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123467 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123467 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123467 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.0ms)
+  [1m[35m (40.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:43 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:43 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (30.2ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:43', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:43')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 60ms (ActiveRecord: 33.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:43 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123468 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123468 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (25.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123468 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123468 LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 78.8ms | ActiveRecord: 3.1ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123468 LIMIT 1
+  Rendered posts/_form.html.slim (47.5ms)
+  Rendered posts/new.html.slim within layouts/application (85.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123468 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123468 LIMIT 1
+Completed 200 OK in 99ms (Views: 88.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (50.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:44', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:44')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123469 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123469 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123469 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123469 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.9ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123469 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123469 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123469 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123469 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (42.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:44', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:44')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123470 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123470 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123470 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123470 LIMIT 1[0m
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:44', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:44:44')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:44:44', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:44:44', 123456)
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/posts/4" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123470 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123470 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123470 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123470 LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 50.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (42.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:44', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:44')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123471 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123471 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123471 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123471 LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.9ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123471 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (75.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:44', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:44')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123472 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123472 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123472 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123472 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 1.0ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123472 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:44 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (43.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:51 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:51 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (30.3ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:52', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:52')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 74ms (ActiveRecord: 34.0ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123473 LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123473 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (25.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123473 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123473 LIMIT 1[0m
+Completed 200 OK in 95ms (Views: 87.6ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:52', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:44:52')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:44:52', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:44:52', 123456)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/posts/5" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123473 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 5 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123473 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  Rendered posts/show.html.slim within layouts/application (47.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123473 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123473 LIMIT 1[0m
+Completed 200 OK in 54ms (Views: 50.4ms | ActiveRecord: 1.6ms)
+  [1m[35m (38.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:52', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:52')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123474 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123474 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123474 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123474 LIMIT 1[0m
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 1.0ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123474 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123474 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123474 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123474 LIMIT 1
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (38.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:52', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:52')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123475 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123475 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123475 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123475 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123475 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (35.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:52', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:52')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123476 LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123476 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123476 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123476 LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.7ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123476 LIMIT 1
+  Rendered posts/_form.html.slim (47.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123476 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123476 LIMIT 1
+Completed 200 OK in 92ms (Views: 90.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (34.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:44:52', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:44:52')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123477 LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123477 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123477 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123477 LIMIT 1
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123477 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:44:52 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (36.4ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:44:59 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:44:59 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:00', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:00')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 62ms (ActiveRecord: 5.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123478 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123478 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (26.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123478 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123478 LIMIT 1[0m
+Completed 200 OK in 90ms (Views: 83.6ms | ActiveRecord: 3.1ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123478 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.slim within layouts/application (42.0ms)
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 46ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (35.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:00', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123479 LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123479 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123479 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123479 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123479 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123479 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123479 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123479 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (37.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:00', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:00')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123480 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123480 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123480 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123480 LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123480 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (38.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:00', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:00')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123481 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123481 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123481 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123481 LIMIT 1
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:00', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:45:00')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:45:00', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:45:00', 123456)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/posts/6" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123481 LIMIT 1[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123481 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123481 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123481 LIMIT 1
+Completed 200 OK in 55ms (Views: 51.1ms | ActiveRecord: 1.6ms)
+  [1m[36m (38.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:00', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:00')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123482 LIMIT 1[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123482 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123482 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123482 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.1ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:45:00 -0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123482 LIMIT 1[0m
+  Rendered posts/_form.html.slim (49.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123482 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123482 LIMIT 1[0m
+Completed 200 OK in 62ms (Views: 60.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (37.9ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:07 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:07 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (30.1ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:08', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:08')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 73ms (ActiveRecord: 33.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123483 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123483 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (25.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123483 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123483 LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 78.7ms | ActiveRecord: 2.9ms)
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:08', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:45:08')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:45:08', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:45:08', 123456)
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/posts/7" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123483 LIMIT 1
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123483 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  Rendered posts/show.html.slim within layouts/application (60.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123483 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123483 LIMIT 1[0m
+Completed 200 OK in 74ms (Views: 65.1ms | ActiveRecord: 1.8ms)
+  [1m[35m (60.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:08', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:08')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123484 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123484 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123484 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123484 LIMIT 1[0m
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 1.0ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123484 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (39.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:08', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:08')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123485 LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123485 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123485 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123485 LIMIT 1
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123485 LIMIT 1[0m
+  Rendered posts/_form.html.slim (18.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123485 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123485 LIMIT 1[0m
+Completed 200 OK in 68ms (Views: 65.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (41.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:08', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:08')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123486 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123486 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123486 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123486 LIMIT 1[0m
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.7ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123486 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123486 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123486 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123486 LIMIT 1
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.8ms)
+  [1m[36m (46.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:08', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:08')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123487 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123487 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123487 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123487 LIMIT 1
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123487 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:08 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (44.8ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:16', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:16')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 47ms (ActiveRecord: 2.9ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123488 LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123488 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (55.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123488 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123488 LIMIT 1[0m
+Completed 200 OK in 119ms (Views: 112.4ms | ActiveRecord: 3.1ms)
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:16', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:45:16')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:45:16', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:45:16', 123456)
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/posts/8" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123488 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 8 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123488 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  Rendered posts/show.html.slim within layouts/application (19.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123488 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123488 LIMIT 1[0m
+Completed 200 OK in 30ms (Views: 23.8ms | ActiveRecord: 1.3ms)
+  [1m[35m (43.0ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:16', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:16')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123489 LIMIT 1
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123489 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123489 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123489 LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.1ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123489 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (47.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:16', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:16')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123490 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123490 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123490 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123490 LIMIT 1
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123490 LIMIT 1[0m
+  Rendered posts/_form.html.slim (50.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123490 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123490 LIMIT 1[0m
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (44.8ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:16', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:16')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123491 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123491 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123491 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123491 LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 1.1ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123491 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123491 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123491 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123491 LIMIT 1
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.8ms)
+  [1m[36m (47.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:45:16', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:45:16')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123492 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123492 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123492 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123492 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.9ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123492 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:45:16 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (43.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:59:17', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:59:17')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 66ms (ActiveRecord: 4.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123493 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123493 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (56.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123493 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123493 LIMIT 1[0m
+Completed 200 OK in 131ms (Views: 123.7ms | ActiveRecord: 2.8ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123493 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.slim within layouts/application (10.3ms)
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (61.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:59:17', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:59:17')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123494 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123494 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123494 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123494 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:59:17', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 22:59:17')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 22:59:17', 'Some message', NULL, NULL, 'Some title', '2012-12-25 22:59:17', 123456)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/posts/9" for 127.0.0.1 at 2012-12-25 14:59:17 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123494 LIMIT 1[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 9 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123494 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123494 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123494 LIMIT 1
+Completed 200 OK in 54ms (Views: 50.6ms | ActiveRecord: 1.6ms)
+  [1m[36m (42.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:59:18', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:59:18')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123495 LIMIT 1[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123495 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123495 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123495 LIMIT 1
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 1.1ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123495 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123495 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123495 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123495 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (42.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:59:18', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:59:18')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123496 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123496 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123496 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123496 LIMIT 1[0m
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.8ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123496 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (48.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 22:59:18', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 22:59:18')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123497 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123497 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123497 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123497 LIMIT 1
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 14:59:18 -0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123497 LIMIT 1[0m
+  Rendered posts/_form.html.slim (18.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123497 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123497 LIMIT 1[0m
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (46.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 23:04:04', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 23:04:04')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 62ms (ActiveRecord: 5.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123498 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123498 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (57.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123498 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123498 LIMIT 1[0m
+Completed 200 OK in 121ms (Views: 114.1ms | ActiveRecord: 3.1ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123498 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.slim within layouts/application (10.1ms)
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (94.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 23:04:04', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 23:04:04')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123499 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123499 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123499 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123499 LIMIT 1
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 1.0ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123499 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123499 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123499 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123499 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (58.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 23:04:04', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 23:04:04')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123500 LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123500 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123500 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123500 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 23:04:04', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-25 23:04:04')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-25 23:04:04', 'Some message', NULL, NULL, 'Some title', '2012-12-25 23:04:04', 123456)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/posts/10" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123500 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 10 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123500 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123500 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123500 LIMIT 1[0m
+Completed 200 OK in 64ms (Views: 56.7ms | ActiveRecord: 1.4ms)
+  [1m[35m (43.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 23:04:04', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 23:04:04')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 15:04:04 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123501 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123501 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123501 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123501 LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 1.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 15:04:05 -0800
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123501 LIMIT 1
+  Rendered posts/_form.html.slim (54.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123501 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123501 LIMIT 1
+Completed 200 OK in 72ms (Views: 68.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (40.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 15:04:05 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 15:04:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-25 23:04:05', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-25 23:04:05')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 15:04:05 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123502 LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123502 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123502 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123502 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 15:04:05 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123502 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 15:04:05 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (40.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 20:54:03 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 20:54:03 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-26 04:54:03', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-26 04:54:03')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 91ms (ActiveRecord: 6.0ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 20:54:03 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123503 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123503 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  Rendered posts/index.html.slim within layouts/application (27.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123503 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123503 LIMIT 1[0m
+Completed 200 OK in 114ms (Views: 111.0ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `id`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-26 04:54:03', 123456, 'Nikhil', NULL, NULL, NULL, NULL, '2012-12-26 04:54:03')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `posts` (`created_at`, `message`, `oauth_expires_at`, `oauth_token`, `title`, `updated_at`, `user_id`) VALUES ('2012-12-26 04:54:03', 'Some message', NULL, NULL, 'Some title', '2012-12-26 04:54:03', 123456)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/posts/11" for 127.0.0.1 at 2012-12-25 20:54:03 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123503 LIMIT 1
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 11 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 11 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 11 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 11 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 11 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123503 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 11 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123456 LIMIT 1[0m
+  Rendered posts/show.html.slim within layouts/application (49.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123503 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123503 LIMIT 1[0m
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 1.7ms)
+  [1m[35m (171.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-26 04:54:04', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-26 04:54:04')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123504 LIMIT 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123504 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123504 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123504 LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.9ms)
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123504 LIMIT 1[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123504 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123504 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123504 LIMIT 1
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 1.1ms)
+  [1m[36m (40.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-26 04:54:04', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-26 04:54:04')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123505 LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123505 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123505 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123505 LIMIT 1
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.7ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123505 LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (37.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-26 04:54:04', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-26 04:54:04')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123506 LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123506 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `posts`.* FROM `posts` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123506 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123506 LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.0ms)
+Started GET "/signout" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123506 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by PostsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (40.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"twitter"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '123456' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `oauth_expires_at`, `oauth_token`, `provider`, `uid`, `updated_at`) VALUES ('2012-12-26 04:54:04', 'Bob Example', NULL, NULL, 'twitter', '123456', '2012-12-26 04:54:04')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+Started GET "/" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123507 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123507 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `posts`.* FROM `posts` 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123507 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123507 LIMIT 1
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2012-12-25 20:54:04 -0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123507 LIMIT 1[0m
+  Rendered posts/_form.html.slim (51.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 123507 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 123507 LIMIT 1[0m
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (37.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
